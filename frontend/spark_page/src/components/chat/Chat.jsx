@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios'
 
 import CM from '../../images/CheongMyeong.png'
@@ -29,17 +29,32 @@ export default function Chat(){
 	const [firstChat, setFirstChat] = useState();
 	const [content, setContent] = useState('');
 	const [chats, setChats] = useState();
+	const [imgName,setimgName] = useState();
+
+	const originalSet = () => {
+		setChatId(location.pathname.split('/')[3])
+		setStory(datas.find(data => data.id == chatId)?.story)
+		setSituation(datas.find(data => data.id == chatId)?.sit_title)
+		setBot(datas.find(data => data.id == chatId)?.bot)
+		setUser(datas.find(data => data.id == chatId)?.user)
+		setimgName(datas.find(data => data.id == chatId)?.img_name)
+		setFirstChat(datas.find(data => data.id == chatId)?.sit_line)
+		setChats([{ name: bot, content: firstChat }])
+	}
+	const FictionSet = () => {
+		setStory(situationdatas.find(data => data.id == situationId || data.id == chatId)?.story)
+		setSituation(situationdatas.find(data => data.id == situationId)?.children[chatId%2].sit_title)
+		setBot(situationdatas.find(data => data.id == situationId)?.bot)
+		setUser(situationdatas.find(data => data.id == situationId)?.children[chatId%2].user)
+		setimgName(situationdatas.find(data => data.id == situationId)?.img_name)
+		setFirstChat(situationdatas.find(data => data.id == situationId)?.children[chatId%2].sit_line)
+		setChats([{ name: bot, content: firstChat }])
+	}
 
 	useEffect(() => {
 		
 		if(chatId < 10){
-			setChatId(location.pathname.split('/')[3])
-			setStory(datas.find(data => data.id == chatId)?.story)
-			setSituation(datas.find(data => data.id == chatId)?.sit_title)
-			setBot(datas.find(data => data.id == chatId)?.bot)
-			setUser(datas.find(data => data.id == chatId)?.user)
-			setFirstChat(datas.find(data => data.id == chatId)?.sit_line)
-			setChats([{ name: bot, content: firstChat }])
+			originalSet()
 		}
 		else{
 			if(location.pathname.split('/')[3] % 2 == 0){
@@ -50,12 +65,7 @@ export default function Chat(){
 				setSituationId(location.pathname.split('/')[3]-1)
 				setChatId(location.pathname.split('/')[3])
 			}
-			setStory(situationdatas.find(data => data.id == situationId || data.id == chatId)?.story)
-			setSituation(situationdatas.find(data => data.id == situationId)?.children[chatId%2].sit_title)
-			setBot(situationdatas.find(data => data.id == situationId)?.bot)
-			setUser(situationdatas.find(data => data.id == situationId)?.children[chatId%2].user)
-			setFirstChat(situationdatas.find(data => data.id == situationId)?.children[chatId%2].sit_line)
-			setChats([{ name: bot, content: firstChat }])
+			FictionSet()
 		}
 	}, [firstChat])
 	
@@ -89,7 +99,17 @@ export default function Chat(){
 	const onClickButton = () => {
 		navigate(-1);
 	}
+	const scrollRef = useRef()
 
+	useEffect(() => {
+		scrollToBottom();
+	}, [chats]);
+
+	const scrollToBottom = () => {
+			if (scrollRef.current) {
+					scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+			}
+	};
 	return(
 		<>
 			<div className='ChattingHeader'>
@@ -98,11 +118,11 @@ export default function Chat(){
 				<BsSearch size={30} style={{marginRight:'3%',fontWeight:'bold'}} onClick={handleClickSearch}/>
 			</div>
 			<ChatHeader content={situation}/>
-			<div className="ChatLog">
+			<div className="ChatLog" ref={scrollRef}>
 				{chats && chats.map((chat, index) => (
 					chat.name === user ?
 					<Rightchat key={index} name={chat.name} content={chat.content} /> :
-					<Leftchat key={index} name={chat.name} content={chat.content} />
+					<Leftchat key={index} name={chat.name} content={chat.content} imgName={imgName}/>
 				))}
 			</div>
 			<div className='d-flex justify-content-center' style={{height:'6%'}}>

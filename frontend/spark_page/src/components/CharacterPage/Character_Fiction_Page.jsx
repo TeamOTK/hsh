@@ -8,7 +8,7 @@ export default function CharacterFicion({handleClickCharacter}) {
 			<div className='FictionList'>
 				{/* map 함수 이용해 아이템 추가 */}
 				{datas.map((item) => (
-					<div className='FictionItem'>
+					<div className='FictionItem' key={item.bot}>
 							<div className='FictionCharacter'>
 								<img src={require(`../../images/${item.img_name}.png`)} className='FictionCharacterImg'/>
 								<div className='CharacterDesc'>
