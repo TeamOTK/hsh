@@ -3,6 +3,7 @@
         "id": "10",
         "story": "가비지타임",
         "bot": "전영중",
+        "img_name": "YeongJoong",
         "children":[
             {    
                 "id": "10",
@@ -22,6 +23,7 @@
         "id": "12",
         "story": "가비지타임",
         "bot": "성준수",
+        "img_name": "JoonSoo",
         "children":[
             {    
                 "id": "12",
@@ -41,6 +43,7 @@
         "id": "14",
         "story": "화산귀환",
         "bot": "청명",
+        "img_name": "CheongMyeong",
         "children":[
             {    
                 "id": "14",
@@ -60,6 +63,7 @@
         "id": "16",
         "story": "화산귀환",
         "bot": "혜연",
+        "img_name": "HyeYeon",
         "children":[
             {    
                 "id": "16",
@@ -79,6 +83,7 @@
         "id": "18",
         "story": "신의 탑",
         "bot": "스물다섯번째 밤",
+        "img_name": "Bam",
         "children":[
             {    
                 "id": "18",
@@ -98,6 +103,7 @@
         "id": "20",
         "story": "신의 탑",
         "bot": "라헬",
+        "img_name": "RaHel",
         "children":[
             {    
                 "id": "20",
@@ -117,6 +123,7 @@
         "id": "20",
         "story": "이런 영웅은 싫어",
         "bot": "혜나",
+        "img_name": "HyeNa",
         "children":[
             {    
                 "id": "20",
@@ -136,6 +143,7 @@
         "id": "22",
         "story": "이런 영웅은 싫어",
         "bot": "다나",
+        "img_name": "Dana",
         "children":[
             {    
                 "id": "22",
@@ -155,6 +163,7 @@
         "id": "24",
         "story": "어글리 후드",
         "bot": "엘사 브라이언트",
+        "img_name": "Elsa",
         "children":[
             {    
                 "id": "24",
@@ -174,6 +183,7 @@
         "id": "26",
         "story": "어글리 후드",
         "bot": "센 프라우드",
+        "img_name": "Ssen",
         "children":[
             {    
                 "id": "26",

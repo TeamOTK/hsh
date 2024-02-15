@@ -10,7 +10,7 @@ export default function CharacterFicion({handleClickCharacter}) {
 				{datas.map((item) => (
 					<div className='FictionItem'>
 							<div className='FictionCharacter'>
-								<img src={CM} className='FictionCharacterImg'/>
+								<img src={require(`../../images/${item.img_name}.png`)} className='FictionCharacterImg'/>
 								<div className='CharacterDesc'>
 									<div className='NameInfo'>{item.bot}</div>
 									<div className='PlatformInfo'>네이버웹툰</div>
