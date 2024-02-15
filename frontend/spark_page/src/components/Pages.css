@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+
+.MainPageBackGround{
+	height: 100%;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.MainPageLargeTextSet{
+	display: flex;
+	flex-direction: column;
+	margin-top: 34%;
+	align-items: center;
+}
+
+.MainPageSmallTextSet{
+	display: flex;
+	flex-direction: column;
+	margin-top: 34%;
+	align-items: center;
+}
+
+.MainPageLargeText{
+	text-align: center;
+	color: #3C1A7D;
+	font-family: "Darumadrop One", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+	letter-spacing: 2px;
+}
+
+.MainPageSmallText{
+	text-align: center;
+	color: #000000;
+}
+
+.TextBox{
+	display: flex;
+	flex-direction: row;
+}
+
+h1{
+	font-size: 3rem;
+	margin-block-start: 0.32em;
+	margin-block-end: 0.32em;
+	font-weight: bold;
+}
+
+h2{
+	margin-block-start: 0.32em;
+	margin-block-end: 0.32em;
+}
+
+.StartButton{
+	background-color: #3C1A7D;
+	border-color: #3C1A7D;
+	font-weight: bold;
+	font-size: 1.5rem;
+	width: 70%;
+	margin-top: 8%;
+}
+
+.StartButton:active{
+	background-color: #3C1A7D;
+}
+
+
+
+
+
+.FictionList{
+	width: 100%;
+	height: 100%;
+	margin-top: 6%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.FictionItem{
+	width: 85%;
+	height: auto;
+	padding: 8px;
+	background-color: white;
+	border-radius: 15px;
+	display: flex;
+	border: #808080 solid 1px;
+}
+
+.SubFictionList{
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+	justify-content: space-between;
+	margin: 2%;
+}
+
+.SubFictionItem{
+	width: 100%;
+	height: 43%;
+	border: 1px solid #808080;
+	border-radius: 10px;
+	padding: 1.5%;
+	color: black;
+	font-size: 80%;
+}
+
+.FictionCharacter{
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	padding-right: 4%;
+}
+
+.CharacterImg{
+	width: 100%;
+	height: 55%;
+}
+
+.CharacterDesc{
+	width: 100%;
+	height: 45%;
+	margin-top: 4%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.NameInfo{
+	font-size: 120%;
+	font-weight: bold;
+}
+
+.PlatformInfo{
+	font-size: 80%;
+	color: #808080;
+}
+
+.WebtoonInfo{
+	font-size: 100%;
+}
+
+
+.CharacterLargeTextSet{
+	display: flex;
+	flex-direction: row;
+	margin-top: 6%;
+	height: 6%;
+	align-items: center;
+	justify-content: center;
+	width: 95%;
+}
+
+.CharacterPageLargeText{
+	text-align: center;
+	color: #3C1A7D;
+  font-weight: bold;
+}
+
+.CharacterHeader{
+	height: 8%;
+	width: 100%;
+	background-color: #E6E1EF;
+	display: flex;
+	align-items: center;
+}

@@ -1,0 +1,14 @@
+@media screen and (max-width: 768px) {
+	.ChatHeader{
+		height: 6%;
+		background-color: #C1BDDA;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.ChatHeaderText{
+		color: black;
+		font-size: 100%;
+		text-align: center;
+	}
+}
