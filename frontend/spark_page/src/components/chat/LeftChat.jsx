@@ -1,5 +1,5 @@
 import './Chat.css'
-import CM from '../images/CM.png'
+import CM from '../../images/CheongMyeong.png'
 export default function Leftchat({name, content}) {
 	return (
 		<div className="AiChat">

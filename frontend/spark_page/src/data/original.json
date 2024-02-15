@@ -5,7 +5,9 @@
 			"bot": "전영중",
 			"user": "나",
 			"sit_title": "가비지타임의 전영준와 대화해보세요",
-			"sit_line": "안녕 나는 전영중이야"
+			"sit_line": "안녕 나는 전영중이야",
+			"img_name": "YeongJoong"
+			
 	},
 	{
 			"id": "1",
@@ -13,7 +15,8 @@
 			"bot": "성준수",
 			"user": "나",
 			"sit_title": "가비지타임의 성준수와 대화해보세요",
-			"sit_line": "안녕 나는 성준수야"
+			"sit_line": "안녕 나는 성준수야",
+			"img_name": "JoonSoo"
 	},
 	{
 			"id": "2",
@@ -21,7 +24,8 @@
 			"bot": "청명",
 			"user": "나",
 			"sit_title": "화산귀환의 청명과 대화해보세요",
-			"sit_line": "안녕 나는 청명이야"
+			"sit_line": "안녕 나는 청명이야",
+			"img_name": "CheongMyeong"
 	},
 	{
 			"id": "3",
@@ -29,7 +33,8 @@
 			"bot": "혜연",
 			"user": "나",
 			"sit_title": "화산귀환의 혜연과 대화해보세요",
-			"sit_line": "안녕 나는 혜연이야"
+			"sit_line": "안녕 나는 혜연이야",
+			"img_name": "HyeYeon"
 	},
 	{
 			"id": "4",
@@ -37,7 +42,8 @@
 			"bot": "밤",
 			"user": "나",
 			"sit_title": "신의 탑의 밤과 대화해보세요",
-			"sit_line": "안녕 나는 밤이야"
+			"sit_line": "안녕 나는 밤이야",
+			"img_name": "Bam"
 	},
 	{
 			"id": "5",
@@ -45,7 +51,8 @@
 			"bot": "라헬",
 			"user": "나",
 			"sit_title": "신의 탑의 라헬과 대화해보세요",
-			"sit_line": "안녕 나는 라헬이야"
+			"sit_line": "안녕 나는 라헬이야",
+			"img_name": "RaHel"
 	},
 	{
 			"id": "6",
@@ -53,7 +60,8 @@
 			"bot": "혜나",
 			"user": "나",
 			"sit_title": "이런 영웅은 싫어의 혜나와 대화해보세요",
-			"sit_line": "안녕 나는 혜나야"
+			"sit_line": "안녕 나는 혜나야",
+			"img_name": "HyeNa"
 	},
 	{
 			"id": "7",
@@ -61,7 +69,8 @@
 			"bot": "다나",
 			"user": "나",
 			"sit_title": "이런 영웅은 싫어의 다나와 대화해보세요",
-			"sit_line": "안녕 나는 다나야!"
+			"sit_line": "안녕 나는 다나야!",
+			"img_name": "Dana"
 	},
 	{
 			"id": "8",
@@ -69,7 +78,8 @@
 			"bot": "엘사 브라이언트",
 			"user": "나",
 			"sit_title": "어글리후드의 엘사 브라이언트와 대화해보세요",
-			"sit_line": "안녕 나는 엘사야"
+			"sit_line": "안녕 나는 엘사야",
+			"img_name": "Elsa"
 	},
 	{
 			"id": "9",
@@ -77,6 +87,7 @@
 			"bot": "센 프라우드",
 			"user": "나",
 			"sit_title": "어글리후드의 센 프라우드와 대화해보세요",
-			"sit_line": "안녕 나는 센이야"
+			"sit_line": "안녕 나는 센이야",
+			"img_name": "Ssen"
 	}
 ]

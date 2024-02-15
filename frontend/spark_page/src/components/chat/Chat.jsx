@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 
-import CM from '../images/CM.png'
+import CM from '../../images/CheongMyeong.png'
 import { BsCursorFill } from "react-icons/bs";
 import './Chat.css'
 import { BsChevronLeft } from "react-icons/bs";

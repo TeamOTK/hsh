@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/esm/Button'
 import { useNavigate } from 'react-router-dom';
 
-import CM from './images/CM.png'
+import CM from '../images/CheongMyeong.png'
 import './Situation.css'
 import Footer from './Footer';
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, React } from "react";
 
-import CM from '../images/CM.png'
+import CM from '../../images/CheongMyeong.png'
 import './Character_Original_Page.css'
 
 export default function CharacterOriginal({handleClickCharacter}) {
@@ -13,7 +13,7 @@ export default function CharacterOriginal({handleClickCharacter}) {
 				{datas.map((item) => (
 					<div className='OriginalItem' onClick={() => handleClickCharacter(item.id)} key={item.id}>
 							<div className='OriginalCharacter'>
-								<img src={CM} className='OriginalCharacterImg'/>
+								<img src={require(`../../images/${item.img_name}.png`)} className='OriginalCharacterImg'/>
 								<div className='OriginalCharacterDesc'>
 									<div className='NameInfo'>{item.bot}</div>
 									<div className='PlatformInfo'>네이버웹툰</div>

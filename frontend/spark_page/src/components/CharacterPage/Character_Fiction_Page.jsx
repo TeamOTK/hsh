@@ -1,4 +1,4 @@
-import CM from '../images/CM.png'
+import CM from '../../images/CheongMyeong.png'
 import './Character_Fiction_Page.css'
 
 export default function CharacterFicion({handleClickCharacter}) {
