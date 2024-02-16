@@ -25,6 +25,7 @@ const App = () => {
 					<Route path='/page/chat/:id' element={<Chat/>}></Route>
 					<Route path='/page/search' element={<Search/>}></Route>
 					<Route path='/page/situation' element={<Situation/>}></Route>
+					<Route path="/*" element={<HomePage />}></Route>
 				</Routes>
 			</BrowserRouter>
 		</div>

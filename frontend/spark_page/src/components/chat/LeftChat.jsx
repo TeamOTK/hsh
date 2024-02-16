@@ -1,9 +1,15 @@
 import './Chat.css'
-import CM from '../../images/CheongMyeong.png'
-export default function Leftchat({name, content}) {
+
+import { useState } from 'react'
+
+export default function Leftchat({name, content,imgName}) {
+	// const [imgName,setImgName] = useState()
+	// if(name == "전영중"){
+	// 	setImgName("YeongJoong")
+	// }
 	return (
 		<div className="AiChat">
-			<img src={CM} width={60}/>
+			{/* <img src={require(`../../images/${imgName}.png`)} width={60}/> */}
 			<div className='AiChatBox'>
 				<div className='AiName'>{name}</div>
 				<div className='AiText'>{content}</div>

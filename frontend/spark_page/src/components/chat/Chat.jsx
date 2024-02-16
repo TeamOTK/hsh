@@ -76,7 +76,7 @@ export default function Chat(){
 	const sendChat = async () => {
 		setChats(currentChats => [...currentChats, { key: Date.now(), name: user, content }]);
 		
-		const res = await axios.post(`http://127.0.0.1:8000/api/chat/${chatId}`, {
+		const res = await axios.post(`http://43.203.207.13/api/chat/${chatId}`, {
 				"chat": content
 		});
 		// 답장
