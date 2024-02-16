@@ -11,14 +11,14 @@
 .MainPageLargeTextSet{
 	display: flex;
 	flex-direction: column;
-	margin-top: 34%;
+	margin-top: 30%;
 	align-items: center;
 }
 
 .MainPageSmallTextSet{
 	display: flex;
 	flex-direction: column;
-	margin-top: 34%;
+	margin-top: 28%;
 	align-items: center;
 }
 
@@ -28,6 +28,7 @@
 	font-family: "Darumadrop One", sans-serif;
   font-weight: bold;
   font-style: normal;
+	font-size: 380%;
 	letter-spacing: 2px;
 }
 
