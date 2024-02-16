@@ -17,6 +17,7 @@
 	display: flex;
 	border: #808080 solid 1px;
 	margin-top: 4%;
+	font-weight: 500;
 }
 
 .SubFictionList{
@@ -35,6 +36,8 @@
 	padding: 1.5%;
 	color: black;
 	font-size: 80%;
+	display: flex;
+	align-items: center;
 }
 
 .FictionCharacter{
@@ -70,6 +73,7 @@
 
 .WebtoonInfo{
 	font-size: 100%;
+	font-weight: 600;
 }
 
 
