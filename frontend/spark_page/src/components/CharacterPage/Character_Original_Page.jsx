@@ -22,8 +22,7 @@ export default function CharacterOriginal({handleClickCharacter}) {
 							</div>
 					</div>
 				)
-				)};
-				
+				)}
 			</div>
 		</>
 			
