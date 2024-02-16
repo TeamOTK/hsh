@@ -75,14 +75,12 @@ export default function Chat(){
 
 	const sendChat = async () => {
 		setChats(currentChats => [...currentChats, { key: Date.now(), name: user, content }]);
-		
+		setContent('');
 		const res = await axios.post(`http://43.203.207.13/api/chat/${chatId}`, {
 				"chat": content
 		});
 		// 답장
 		setChats(currentChats => [...currentChats, { key: Date.now(), name: bot, content: res.data.data }]);
-
-		setContent('');
 	}
 
 	const handleOnKeyPress = (e) => {
@@ -118,17 +116,22 @@ export default function Chat(){
 				<BsSearch size={30} style={{marginRight:'3%',fontWeight:'bold'}} onClick={handleClickSearch}/>
 			</div>
 			<ChatHeader content={situation}/>
-			<div className="ChatLog" ref={scrollRef}>
-				{chats && chats.map((chat, index) => (
-					chat.name === user ?
-					<Rightchat key={index} name={chat.name} content={chat.content} /> :
-					<Leftchat key={index} name={chat.name} content={chat.content} imgName={imgName}/>
-				))}
+			<div className='ChatContainer'>
+				<div className="ChatLog" ref={scrollRef}>
+					{chats && chats.map((chat, index) => (
+						chat.name === user ?
+						<Rightchat key={index} name={chat.name} content={chat.content} /> :
+						<Leftchat key={index} name={chat.name} content={chat.content} imgName={imgName}/>
+					))}
+				</div>
 			</div>
-			<div className='d-flex justify-content-center' style={{height:'6%'}}>
+			
+			<div className='d-flex justify-content-center' style={{height:'6%', marginTop:'4%'}}>
 				<div className="InputBox">
 					<input type='text'className='InputBoxText' placeholder='메세지를 입력하세요' value={content} onChange={e => setContent(e.target.value)} onKeyDown={handleOnKeyPress}></input>
-					<BsCursorFill size={24} style={{color:'black'}} onClick={sendChat}/>
+					<div onClick={sendChat} className='InputBtn'>
+						<BsCursorFill size={24} style={{color:'black'}} />
+					</div>
 				</div>
 			</div>
 			
