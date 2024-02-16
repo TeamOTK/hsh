@@ -1,10 +1,15 @@
-.ChatLog{
-	margin-top: 4%;
+.ChatContainer{
+	padding-top: 23%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	justify-content: flex-end;
+	height: 91%;
+}
+
+.ChatLog{
 	overflow-y: scroll;
-	height: 75%;
+	min-height: 0;
+	max-height: 100%;
 }
 
 .ChattingHeader{
@@ -16,6 +21,8 @@
 	justify-content: space-between;
 	padding-left: 2%;
 	padding-right: 2%;
+	position: fixed;
+	top: 0%;
 }
 
 .AiChat{
@@ -28,6 +35,7 @@
 
 .AiChatBox{
 	margin-left: 3%;
+	
 }
 
 .AiName{
@@ -67,13 +75,21 @@
 	align-items: center;
 	justify-content: space-between;
 	border-radius: 10px;
-	padding: 0 5% 0 5%;
+	padding: 0 0 0 4%;
 }
 
 .InputBoxText{
 	color: #808080;
 	font-size: 1.1em;
-	width: 100%;
+	width: 95%;
 	border: 0;
 	background-color: #E6E1EF;
+}
+
+.InputBtn{
+	width: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-right: 1%;
 }
