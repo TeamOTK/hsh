@@ -8,6 +8,9 @@ export default function CharacterOriginal({handleClickCharacter}) {
 
 	return(
 		<>
+			<div className='CharacterLargeTextSet'>
+				<h2 className='CharacterPageLargeText'>웹툰 등장 인물과 대화해보세요!</h2>
+			</div>
 			<div className='OriginalList'>
 				{/* map 함수 이용해 아이템 추가 */}
 				{datas.map((item) => (

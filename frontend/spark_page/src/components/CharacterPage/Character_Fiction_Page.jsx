@@ -5,6 +5,9 @@ export default function CharacterFicion({handleClickCharacter}) {
 	const datas = require('../../data/situation.json');
 	return(
 		<>
+			<div className='CharacterLargeTextSet'>
+				<h2 className='CharacterPageLargeText'>웹툰 캐릭터가 되어 상황극을 즐겨보세요!</h2>
+			</div>
 			<div className='FictionList'>
 				{/* map 함수 이용해 아이템 추가 */}
 				{datas.map((item) => (
