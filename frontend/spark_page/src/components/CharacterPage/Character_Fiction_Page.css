@@ -31,25 +31,26 @@
 .SubFictionItem{
 	width: 100%;
 	height: 43%;
-	border: 1px solid #808080;
+	border: 1px solid #E6E1EF;
 	border-radius: 10px;
-	padding: 1.5%;
+	padding: 4%;
 	color: black;
 	font-size: 80%;
 	display: flex;
 	align-items: center;
+	background-color: #E6E1EF;
 }
 
 .FictionCharacter{
 	display: flex;
 	flex-direction: column;
 	width: 30%;
-	padding-right: 4%;
 }
 
 .FictionCharacterImg{
 	width: 100%;
 	height: 55%;
+	border-radius: 10px;
 }
 
 .CharacterDesc{
@@ -76,6 +77,15 @@
 	font-weight: 600;
 }
 
+.CharacterLargeTextSet{
+	display: flex;
+	flex-direction: row;
+	margin-top: 6%;
+	height: 6%;
+	align-items: center;
+	justify-content: center;
+	width: 95%;
+}
 
 .CharacterPageLargeText{
 	text-align: center;
