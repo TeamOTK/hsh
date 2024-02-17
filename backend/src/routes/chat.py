@@ -2,8 +2,8 @@ from typing import Optional
 from fastapi import APIRouter, Depends
 from apis import chat
 
-from chatbot.character import Character
 from chatbot.summary import Summary
+from cbot.situation import Character
 from cbot.character import OverallChain
 
 from pydantic import BaseModel
@@ -12,6 +12,7 @@ from typing import Optional
 import requests
 import zipfile
 import json
+import math
 
 class ChatSchema(BaseModel):
     chat: str
@@ -25,9 +26,9 @@ router = APIRouter(
     
 @router.post("/chat/{id}")
 async def chatting(id: int, chat_input: ChatSchema):
-    if(id < 10):
-        with open("sit_data/char.json", "r", encoding="utf8") as json_file:
+    with open("sit_data/char.json", "r", encoding="utf8") as json_file:
             json_data = json_file.read()
+    if(id < 10):
         data = json.loads(json_data)
         intro = data[id]["intro"]
         story = data[id]["story"]
@@ -35,8 +36,13 @@ async def chatting(id: int, chat_input: ChatSchema):
         character = OverallChain(intro, story, line)
         response = character.receive_chat(chat_input.chat)
     else:
-        print(id)
-        character = Character(id)
+        data = json.loads(json_data)
+        index = math.floor((id-10)/2)
+        intro = data[index]["intro"]
+        story = data[index]["story"]
+        line = data[index]["line"]
+        situation = data[index]["situations"][id%2]
+        character = Character(intro, story, line, situation)
         response = character.receive_chat(chat_input.chat)
     
     
