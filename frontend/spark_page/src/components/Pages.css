@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+
+@font-face {
+    font-family: 'Ownglyph_meetme-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .MainPageBackGround{
 	height: 100%;
@@ -25,10 +33,21 @@
 .MainPageLargeText{
 	text-align: center;
 	color: #3C1A7D;
-	font-family: "Darumadrop One", sans-serif;
-  font-weight: bold;
+	font-family: "Ownglyph_meetme-Rg", sans-serif;
+  font-weight: 500;
   font-style: normal;
-	font-size: 380%;
+	font-size: 700%;
+	letter-spacing: 10px;
+	margin: 0;
+}
+
+.MainPageLargeText2{
+	text-align: center;
+	color: #3C1A7D;
+	font-family: "Darumadrop One", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+	font-size: 200%;
 	letter-spacing: 2px;
 }
 
