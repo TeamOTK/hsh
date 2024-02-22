@@ -20,7 +20,7 @@
 	align-items:center;
 	justify-content: space-between;
 	padding-left: 2%;
-	padding-right: 2%;
+	padding-right: 8%;
 	position: fixed;
 	top: 0%;
 }
@@ -92,4 +92,8 @@
 	align-items: center;
 	justify-content: center;
 	padding-right: 1%;
+}
+
+.SettingButton{
+	
 }

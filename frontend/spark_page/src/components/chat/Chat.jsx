@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import CM from '../../images/CheongMyeong.png'
 import { BsCursorFill } from "react-icons/bs";
-import './Chat.css'
+import './Chat.css';
 import { BsChevronLeft } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import SubHeader from '../Header/SubHeader';
@@ -113,7 +113,8 @@ export default function Chat(){
 			<div className='ChattingHeader'>
 				<BsChevronLeft size={25} onClick={onClickButton}/>
 				<h2 className="text">{bot}</h2>
-				<BsSearch size={30} style={{marginRight:'3%',fontWeight:'bold'}} onClick={handleClickSearch}/>
+				{/* <BsSearch size={30} style={{marginRight:'3%',fontWeight:'bold'}} onClick={handleClickSearch}/> */}
+				<div></div>
 			</div>
 			<ChatHeader content={situation}/>
 			<div className='ChatContainer'>
