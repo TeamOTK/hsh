@@ -8,6 +8,10 @@
     font-style: normal;
 }
 
+.BtnContainer{
+	height: 80%;
+}
+
 .MainPageBackGround{
 	height: 100%;
 	background-color: #ffffff;
@@ -19,14 +23,14 @@
 .MainPageLargeTextSet{
 	display: flex;
 	flex-direction: column;
-	margin-top: 30%;
+	margin-top: 55%;
 	align-items: center;
 }
 
 .MainPageSmallTextSet{
 	display: flex;
 	flex-direction: column;
-	margin-top: 28%;
+	margin-top: 90%;
 	align-items: center;
 }
 
@@ -82,7 +86,7 @@ h2{
 	margin-top: 8%;
 }
 
-.StartButton:active{
+.StartButton:hover{
 	background-color: #3C1A7D;
 }
 
