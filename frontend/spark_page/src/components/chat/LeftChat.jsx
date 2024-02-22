@@ -9,7 +9,7 @@ export default function Leftchat({name, content,imgName}) {
 	// }
 	return (
 		<div className="AiChat">
-			{/* <img src={require(`../../images/${imgName}.png`)} width={60}/> */}
+			{imgName && <img src={require(`../../images/${imgName}.png`)} width={60}/>}
 			<div className='AiChatBox'>
 				<div className='AiName'>{name}</div>
 				<div className='AiText'>{content}</div>
