@@ -7,11 +7,14 @@ import './index.css';
 
 import HomePage from './components/HomePage';
 import MainPage from './components/MainPage';
+import WarningPage from './components/WarningPage';
 import CharacterPage from './components/CharacterPage/CharacterPage';
 import Chat from './components/chat/Chat';
 import Search from './components/Search';
 import Situation from './components/Situation';
-
+import CharacterSettingPage from './components/CharacterSettingPage';
+import SituationSettingPage from './components/SituationSettingPage';
+import CharacterCommunity from './components/CharacterCommunity';
 
 const App = () => {
 
@@ -21,7 +24,11 @@ const App = () => {
 				<Routes>
 					<Route path="/" element={<HomePage />}></Route>
 					<Route path="/main" element={<MainPage />}></Route>
+					<Route path="/warning" element={<WarningPage />}></Route>
 					<Route path='/character' element={<CharacterPage/>}></Route>
+					<Route path='/community' element={<CharacterCommunity/>}></Route>
+					<Route path='/setting/character' element={<CharacterSettingPage/>}></Route>
+					<Route path='/setting/situation' element={<SituationSettingPage/>}></Route>
 					<Route path='/page/chat/:id' element={<Chat/>}></Route>
 					<Route path='/page/search' element={<Search/>}></Route>
 					<Route path='/page/situation' element={<Situation/>}></Route>
