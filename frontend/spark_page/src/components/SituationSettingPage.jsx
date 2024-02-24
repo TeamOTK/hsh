@@ -10,7 +10,7 @@ export default function SituationSettingPage(){
 	const navigate = useNavigate();
 
 	const onClickButton = () => {
-		navigate(-1);
+		navigate('/setting/character');
 	}
 
 	const handleClickButton = () => {

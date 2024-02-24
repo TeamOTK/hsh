@@ -8,7 +8,7 @@ export default function WarningPage(){
 	const navigate = useNavigate();
 
 	const onClickButton = () => {
-		navigate(-1);
+		navigate('/main');
 	}
 
 	const handleClick = () => {

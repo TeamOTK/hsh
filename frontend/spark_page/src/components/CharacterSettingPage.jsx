@@ -24,14 +24,14 @@ export default function CharacterSettingPage(){
 
 
 	const onClickButton = () => {
-		navigate(-1);
+		navigate('/warning');
 	}
 
 	const handleClickButton = () => {
 		navigate('/community')
 	}
 	const handleClickNextButton = () => {
-		navigate('/page/chat/0')
+		navigate('/setting/situation')
 	}
 
 	return(

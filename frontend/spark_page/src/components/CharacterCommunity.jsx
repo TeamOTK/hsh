@@ -12,7 +12,7 @@ export default function CharacterCommunity(){
 	const navigate = useNavigate();
 
 	const onClickButton = () => {
-		navigate(-1);
+		navigate('/setting/character');
 	}
 
 	const onClickItem = () => {
