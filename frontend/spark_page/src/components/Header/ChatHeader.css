@@ -2,7 +2,6 @@
 	.ChatHeader{
 		height: 6%;
 		width: 100%;
-		background-color: #C1BDDA;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -10,7 +9,7 @@
 		top: 8%;
 	}
 	.ChatHeaderText{
-		color: black;
+		color: red;
 		font-size: 100%;
 		text-align: center;
 	}

@@ -116,7 +116,7 @@ export default function Chat(){
 				{/* <BsSearch size={30} style={{marginRight:'3%',fontWeight:'bold'}} onClick={handleClickSearch}/> */}
 				<div></div>
 			</div>
-			<ChatHeader content={situation}/>
+			<ChatHeader/>
 			<div className='ChatContainer'>
 				<div className="ChatLog" ref={scrollRef}>
 					{chats && chats.map((chat, index) => (
