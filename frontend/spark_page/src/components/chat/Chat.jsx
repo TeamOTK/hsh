@@ -3,8 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid';
 
-
-import CM from '../../images/CheongMyeong.png'
+import Button from 'react-bootstrap/esm/Button';
 import { BsCursorFill } from "react-icons/bs";
 import './Chat.css';
 import { BsChevronLeft } from "react-icons/bs";
@@ -19,6 +18,7 @@ export default function Chat(){
 	const location = useLocation();
 	
 	const [chatId, setChatId] = useState(0)
+	const [isChat, setIsChat] = useState(false)
 
 	const userId = location.state.userId;
 
@@ -31,8 +31,35 @@ export default function Chat(){
 	const [user, setUser] = useState("user")
 	const [chats, setChats] = useState([{ name: name, content: firstConv }]);
 	const [content,setContent] = useState('');
+	const [msgLabel, setMsgLabel] = useState("메세지를 입력하세요")
+	const [count, setCount] = useState(0)
+
+	const getUserId = () => {
+		// 로컬 스토리지에서 사용자 ID를 시도하여 가져옴
+		let uId = localStorage.getItem('userId');
+		// 사용자 ID가 없으면 새로 생성하여 저장
+		if (!uId) {
+			uId = uuidv4();
+			localStorage.setItem('userId', uId);
+		}
+		return uId;
+	};
+
+	useEffect(() => {
+		const uId = getUserId();
+		const registerId = async () => {
+			const res = await axios.post("http://13.209.167.220/users/register", {
+					"uuid": uId
+			});
+			// 답장
+			setCount(res.data.user.chat_cnt)
+		}
+		registerId();
+	},[])
 
 	const sendChat = async () => {
+		setIsChat(true)
+		setMsgLabel("답변 생성 중입니다...")
 		setChats(currentChats => [...currentChats, { key: Date.now(), name: user, content }]);
 		setContent('');
 
@@ -44,6 +71,9 @@ export default function Chat(){
 		});
 		// 답장
 		setChats(currentChats => [...currentChats, { key: Date.now(), name: name, content: res.data.chat.response }]);
+		setCount(res.data.chat.chat_cnt)
+		setMsgLabel("메세지를 입력하세요")
+		setIsChat(false)
 	}
 
 	const handleOnKeyPress = (e) => {
@@ -54,7 +84,7 @@ export default function Chat(){
 	};
 
 	const onClickButton = () => {
-		navigate('/setting/situation', {state: {userId: userId, characterId: characterId, situationId: situationId, character_name: name}});
+		navigate('/setting/situation', {state: {userId: userId, character_id: characterId, situationId: situationId, character_name: name, imgName:imgName}});
 	}
 	const scrollRef = useRef()
 
@@ -73,9 +103,9 @@ export default function Chat(){
 				<BsChevronLeft size={25} onClick={onClickButton}/>
 				<h2 className="text">{name}</h2>
 				{/* <BsSearch size={30} style={{marginRight:'3%',fontWeight:'bold'}} onClick={handleClickSearch}/> */}
-				<div></div>
+				{count < 10 ? <div></div> : <Button className='SurveyBtn' onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSf81i3BvmayaTvN8K28J9Q7r4D2ShtNyrzr6Ns7fXQjhjaFfA/viewform?usp=sharing")}>!설문!</Button>}
 			</div>
-			<ChatHeader/>
+			<ChatHeader count={count}/>
 			<div className='ChatContainer'>
 				<div className="ChatLog" ref={scrollRef}>
 					{chats && chats.map((chat, index) => (
@@ -88,7 +118,7 @@ export default function Chat(){
 			
 			<div className='d-flex justify-content-center' style={{height:'6%', marginTop:'4%'}}>
 				<div className="InputBox">
-					<input type='text'className='InputBoxText' placeholder='메세지를 입력하세요' value={content} onChange={e => setContent(e.target.value)} onKeyDown={handleOnKeyPress}></input>
+					<input type='text'className='InputBoxText' placeholder={msgLabel} value={content} disabled={isChat? true : false} onChange={e => setContent(e.target.value)} onKeyDown={handleOnKeyPress}></input>
 					<div onClick={sendChat} className='InputBtn'>
 						<BsCursorFill size={24} style={{color:'black'}} />
 					</div>
