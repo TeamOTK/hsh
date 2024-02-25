@@ -103,7 +103,7 @@ export default function Chat(){
 				<BsChevronLeft size={25} onClick={onClickButton}/>
 				<h2 className="text">{name}</h2>
 				{/* <BsSearch size={30} style={{marginRight:'3%',fontWeight:'bold'}} onClick={handleClickSearch}/> */}
-				{count < 10 ? <div></div> : <Button className='SurveyBtn' onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSf81i3BvmayaTvN8K28J9Q7r4D2ShtNyrzr6Ns7fXQjhjaFfA/viewform?usp=sharing")}>!설문!</Button>}
+				{count < 10 ? <div></div> : <Button className='SurveyBtn' onClick={()=>window.open("https://forms.gle/cSZAF8EfoSvoTqiL7")}>!설문!</Button>}
 			</div>
 			<ChatHeader count={count}/>
 			<div className='ChatContainer'>
