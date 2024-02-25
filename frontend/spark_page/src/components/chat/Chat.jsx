@@ -1,6 +1,8 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios'
+import { v4 as uuidv4 } from 'uuid';
+
 
 import CM from '../../images/CheongMyeong.png'
 import { BsCursorFill } from "react-icons/bs";
@@ -17,70 +19,31 @@ export default function Chat(){
 	const location = useLocation();
 	
 	const [chatId, setChatId] = useState(0)
-	const [situationId,setSituationId] = useState(0)
-	
-	const datas = require('../../data/original.json');
-	const situationdatas = require('../../data/situation.json');
 
-	const [story, setStory] = useState();
-	const [situation, setSituation] = useState();
-	const [bot, setBot] = useState();
-	const [user, setUser] = useState();
-	const [firstChat, setFirstChat] = useState();
-	const [content, setContent] = useState('');
-	const [chats, setChats] = useState();
-	const [imgName,setimgName] = useState();
+	const userId = location.state.userId;
 
-	const originalSet = () => {
-		setChatId(location.pathname.split('/')[3])
-		setStory(datas.find(data => data.id == chatId)?.story)
-		setSituation(datas.find(data => data.id == chatId)?.sit_title)
-		setBot(datas.find(data => data.id == chatId)?.bot)
-		setUser(datas.find(data => data.id == chatId)?.user)
-		setimgName(datas.find(data => data.id == chatId)?.img_name)
-		setFirstChat(datas.find(data => data.id == chatId)?.sit_line)
-		setChats([{ name: bot, content: firstChat }])
-	}
-	const FictionSet = () => {
-		setStory(situationdatas.find(data => data.id == situationId || data.id == chatId)?.story)
-		setSituation(situationdatas.find(data => data.id == situationId)?.children[chatId%2].sit_title)
-		setBot(situationdatas.find(data => data.id == situationId)?.bot)
-		setUser(situationdatas.find(data => data.id == situationId)?.children[chatId%2].user)
-		setimgName(situationdatas.find(data => data.id == situationId)?.img_name)
-		setFirstChat(situationdatas.find(data => data.id == situationId)?.children[chatId%2].sit_line)
-		setChats([{ name: bot, content: firstChat }])
-	}
+	const characterId = location.state.characterId;
+	const situationId = location.state.situationId;
+	const name = location.state.character_name;
+	const imgName = location.state.imgName;
+	const firstConv = location.state.firstConv;
 
-	useEffect(() => {
-		
-		if(chatId < 10){
-			originalSet()
-		}
-		else{
-			if(location.pathname.split('/')[3] % 2 == 0){
-				setChatId(location.pathname.split('/')[3])
-				setSituationId(location.pathname.split('/')[3])
-			}
-			else{
-				setSituationId(location.pathname.split('/')[3]-1)
-				setChatId(location.pathname.split('/')[3])
-			}
-			FictionSet()
-		}
-	}, [firstChat])
-	
-
-	
-	
+	const [user, setUser] = useState("user")
+	const [chats, setChats] = useState([{ name: name, content: firstConv }]);
+	const [content,setContent] = useState('');
 
 	const sendChat = async () => {
 		setChats(currentChats => [...currentChats, { key: Date.now(), name: user, content }]);
 		setContent('');
-		const res = await axios.post(`http://43.203.207.13/api/chat/${chatId}`, {
-				"chat": content
+
+		const res = await axios.post(`http://13.209.167.220/chats/response`, {
+			"user_id": userId,
+			"character_id": characterId,
+			"situation_id": situationId,
+			"user_chat": content
 		});
 		// 답장
-		setChats(currentChats => [...currentChats, { key: Date.now(), name: bot, content: res.data.data }]);
+		setChats(currentChats => [...currentChats, { key: Date.now(), name: name, content: res.data.chat.response }]);
 	}
 
 	const handleOnKeyPress = (e) => {
@@ -90,12 +53,8 @@ export default function Chat(){
 		}
 	};
 
-	const handleClickSearch= () => {
-		navigate('/page/search')
-	}
-
 	const onClickButton = () => {
-		navigate(-1);
+		navigate('/setting/situation', {state: {userId: userId, characterId: characterId, situationId: situationId, character_name: name}});
 	}
 	const scrollRef = useRef()
 
@@ -112,7 +71,7 @@ export default function Chat(){
 		<>
 			<div className='ChattingHeader'>
 				<BsChevronLeft size={25} onClick={onClickButton}/>
-				<h2 className="text">{bot}</h2>
+				<h2 className="text">{name}</h2>
 				{/* <BsSearch size={30} style={{marginRight:'3%',fontWeight:'bold'}} onClick={handleClickSearch}/> */}
 				<div></div>
 			</div>
@@ -121,7 +80,7 @@ export default function Chat(){
 				<div className="ChatLog" ref={scrollRef}>
 					{chats && chats.map((chat, index) => (
 						chat.name === user ?
-						<Rightchat key={index} name={chat.name} content={chat.content} /> :
+						<Rightchat key={index} name={chat.name} content={chat.content}/> :
 						<Leftchat key={index} name={chat.name} content={chat.content} imgName={imgName}/>
 					))}
 				</div>
