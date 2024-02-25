@@ -1,13 +1,40 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import { v4 as uuidv4 } from 'uuid';
 
 import './Pages.css'
+import { useState } from 'react';
 
 export default function MainPage(){
 	const navigate = useNavigate();
+	
+	const [realId, setRealId] = useState('');
+
+	const getUserId = () => {
+		// 로컬 스토리지에서 사용자 ID를 시도하여 가져옴
+		let userId = localStorage.getItem('userId');
+		// 사용자 ID가 없으면 새로 생성하여 저장
+		if (!userId) {
+			userId = uuidv4();
+			localStorage.setItem('userId', userId);
+		}
+		return userId;
+	};
+
+	const registerId = async () => {
+		const res = await axios.post("http://13.209.167.220/users/register", {
+				"uuid": userId
+		});
+		// 답장
+		setRealId(res.data.user.user_id)
+	}
+
+	const userId = getUserId();
+	registerId();
 
 	const handleClick = () => {
-		navigate('/warning')
+		navigate('/warning', {state: {userId: realId}});
 	}
 
 	return(
