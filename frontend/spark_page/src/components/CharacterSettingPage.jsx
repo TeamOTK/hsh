@@ -77,7 +77,7 @@ export default function CharacterSettingPage(){
 
 	const sendSetting = async () => {
 		if(location.state.isCommunity){
-			navigate('/setting/situation', {state: {userId: userId, character_id: location.state.character_id, character_name: name, imgName:uploadImgName}})
+			navigate('/setting/situation', {state: {userId: userId, character_id: location.state.characterId, character_name: name, imgName:uploadImgName}})
 		}
 		else{
 			if(uploadFile == ''){
