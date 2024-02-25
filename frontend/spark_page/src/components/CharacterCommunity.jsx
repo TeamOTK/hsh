@@ -30,7 +30,6 @@ export default function CharacterCommunity(){
 		setFilteredData(characterList.filter((item) => {
 			return Object.values(item).join('').toLowerCase().includes(searchValue.toLowerCase())
 		}))
-		console.log(filteredData)
 	}
 	useEffect(() =>{
 		getCharacters();
