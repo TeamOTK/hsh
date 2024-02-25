@@ -49,3 +49,12 @@
 .WarningButton:hover{
 	background-color: #3C1A7D;
 }
+
+.WarningSmallTextSet{
+	height: 90%;
+	margin-top: 22%;
+}
+
+.WarningSet{
+	margin-top: 8%;
+}
