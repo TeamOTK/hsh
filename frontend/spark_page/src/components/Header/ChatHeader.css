@@ -6,10 +6,16 @@
 		align-items: center;
 		justify-content: center;
 		position: fixed;
+		flex-direction: column;
 		top: 8%;
 	}
 	.ChatHeaderText{
 		color: red;
+		font-size: 100%;
+		text-align: center;
+	}
+	.ChatHeaderText2{
+		color: black;
 		font-size: 100%;
 		text-align: center;
 	}
