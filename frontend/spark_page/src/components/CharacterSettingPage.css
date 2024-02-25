@@ -52,6 +52,7 @@
 .Tag{
 	font-size: 120%;
 	font-weight: bold;
+	margin-right: 5%;
 }
 
 .inputBox{
@@ -123,6 +124,25 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	width: 30%;
+	width: 80%;
 	justify-content: space-between;
+}
+
+.LabelWarning{
+	font-size: 90%;
+	color: red;
+}
+
+.LabelOkay{
+	font-size: 90%;
+	color: gray;
+}
+
+.input-file-button{
+  padding: 6px 25px;
+  background-color:#3C1A7D;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+	font-weight: 600;
 }
